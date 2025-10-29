@@ -18,7 +18,7 @@ const generateRefreshToken = (user) => {
 export const registerUser = asyncHandler(async (req, res) => {
   const { firstName, lastName, email, password, confirmPassword } = req.body;
   if (!firstName || !lastName || !email || !password || !confirmPassword) {
-    throw new Error('provide all information');
+    throw new Error('please provide all information');
   }
   const userexists = await User.findOne({ email });
   if (userexists) {
