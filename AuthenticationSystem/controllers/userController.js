@@ -77,5 +77,5 @@ export const logoutUser = asyncHandler(async (req, res) => {
   if (!refreshToken) throw new Error('No refresh token');
   const decoded = jwt.verify(refreshToken, process.env.JWT_REFRESH);
   res.clearCookie('refreshToken');
-  res.json({ message: 'user logged out' });
+  res.json({ message: 'user  has logged out from the device' });
 });
