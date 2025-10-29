@@ -36,7 +36,7 @@ export const registerUser = asyncHandler(async (req, res) => {
 });
 export const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-  if (!email || !password) throw new Error('all fields are required');
+  if (!email || !password) throw new Error('please enter all the fields');
   const user = await User.findOne({ email });
   if (!user) throw new Error('your are not registered with this email');
   const isMatch = await bcrypt.compare(password, user.password);
